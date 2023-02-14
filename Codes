@@ -1,0 +1,117 @@
+Codes
+--------------------------
+Code for Histogram
+# Load the ggplot2 library
+library(ggplot2)
+
+# Generate some random data
+data <- rnorm(100)
+
+# Create a histogram of the data
+ggplot(data.frame(data), aes(x = data)) +
+  geom_histogram(fill = "blue", alpha = 0.5) +
+  labs(title = "Histogram of Random Data", x = "Value")
+
+--------------------------------
+
+Code for Bar Plot
+
+# Load the ggplot2 library
+library(ggplot2)
+
+# Generate some sample data
+players <- c("VK", "RG", "MSD", "ST")
+Goals <- c(18, 45, 07, 10)
+
+# Create a bar plot of the data
+ggplot(data.frame(players, Goals), aes(x = players, y = Goals)) +
+  geom_bar(stat = "identity", fill = "blue", alpha = 0.5) +
+  labs(title = "Bar Plot of Grouped Data", x = "players", y = "Goals")
+-----------------------------
+
+Code for Density plot
+
+# Load the ggplot2 library
+library(ggplot2)
+
+# Load the mtcars dataset
+data(mtcars)
+
+# Create a density plot of the mpg variable
+ggplot(mtcars, aes(x = mpg)) +
+  geom_density(fill = "blue", alpha = 0.5) +
+  labs(title = "Density Plot of Miles Per Gallon", x = "Miles per Gallon", y = "Density")
+
+----------------------
+Bivariate 
+-------------
+
+Scatter Plot
+
+# Load the ggplot2 library
+library(ggplot2)
+
+# Load the Cars93 dataset from the MASS library
+data(Cars93, package = "MASS")
+
+# Create a scatter plot of horsepower vs. length
+ggplot(Cars93, aes(x = Horsepower, y = Length)) +
+  geom_point() +
+  ggtitle("Scatter Plot of Horsepower vs. Length") +
+  xlab("Horsepower") +
+  ylab("Length")
+---------------------
+
+Line graph
+
+# Load the ggplot2 library
+library(ggplot2)
+
+# Load the Titanic dataset
+data(Titanic)
+
+# Convert Titanic dataset to a data.frame
+Titanic_df <- as.data.frame(Titanic)
+
+# Create a line graph of the number of survivors by class
+ggplot(Titanic_df, aes(x = Class, y = Freq, group = Survived, color = Survived)) +
+  geom_line() +
+  ggtitle("Number of Survivors by Class") +
+  xlab("Class") +
+  ylab("Number of Survivors") +
+  scale_color_discrete(name = "Survived",
+                       labels = c("No", "Yes"))
+-------------------------
+Box Plot
+# Load the ggplot2 library
+library(ggplot2)
+
+# Load the iris dataset
+data(iris)
+
+# Create a box plot of the Sepal.Length variable, grouped by Species
+ggplot(iris, aes(x = Species, y = Sepal.Length)) +
+  geom_boxplot(fill = "blue", alpha = 0.5) +
+  labs(title = "Box Plot of Sepal Length by Species", x = "Species", y = "Sepal Length (cm)")
+-------------------
+Multivariate Data
+-------------------
+
+Heat Map
+
+# Load the ggplot2 library
+library(ggplot2)
+
+# Load the airquality dataset
+data(airquality)
+
+# Create a hexagonal binned plot using the ggplot2 library
+ggplot(airquality, aes(x = Temp, y = Ozone)) +
+  geom_hex(bins = 30, color = "white") +
+  scale_fill_gradient(low = "white", high = "red") +
+  ggtitle("Ozone Level and Temperature") +
+  xlab("Temperature") +
+  ylab("Ozone Level") +
+  theme_minimal()
+-----------------
+
