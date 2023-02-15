@@ -114,4 +114,14 @@ ggplot(airquality, aes(x = Temp, y = Ozone)) +
   ylab("Ozone Level") +
   theme_minimal()
 -----------------
+#3D Scatter Plot
+
+# Load the mtcars dataset
+data(mtcars)
+
+# Plot a 3D scatter plot of mpg, hp, and wt
+library(scatterplot3d)
+scatterplot3d(mtcars$mpg, mtcars$hp, mtcars$wt, main = "3D Scatter Plot",
+              xlab = "Miles per Gallon", ylab = "Horsepower", zlab = "Weight",
+              color = "blue", pch = 19, type = "p")
 
